@@ -25,13 +25,14 @@ app.use(morgan("dev"));
 //Environment Variables
 const PORT = process.env.PORT;
 const DB_URI = process.env.DB_URI;
+console.log("THIS IS DB URI", DB_URI);
 
 //CORS -> Cross Origin Resource Sharing
 const cors = require("cors");
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:3000",
+    origin: `http://localhost:${PORT}`,
   })
 );
 
